@@ -1,25 +1,21 @@
 #Crie um programa que analise uma lista de palavras e encontre anagramas usando manipulação de strings
-palavras = ["uva", "pêra", "maça", "pessoa", "código"]
 
-i= 0
-try:
-    while (i != len(palavras)):
-        Palavra = palavras[i]
-        print(Palavra,len(palavras[i]))
+palavra1 = input("Digite a primeira palavra: ").lower()
+palavra2 = input("Digite a segunda palavra: ").lower()
+letras1 = list(palavra1)
+letras2 = list(palavra2)
+
+if len(letras1) != len(letras2):
+    print("As palavras não são anagramas, pois têm tamanhos diferentes.")
+else:
+    i = 0
+    while i < len(letras1):
+        letra = letras1[i]
+        try:
+            letras2.remove(letra)
+        except:
+            print("As palavras não são anagramas, pois têm letras diferentes")
         i += 1
-        letra = Palavra[i]
-        j = 0
 
-        while (j != len(Palavra)):
-            letra = Palavra[j]
-            print(letra)
-            j += 1
-
-            if (Palavra == letra):
-                fatorial = len(Palavra)
-                while(fatorial != 0):
-                    anagramas *= fatorial
-                    fatorial -= 1
-                    print("A quantidade de anagramas para a palavra",Palavra,"é:",anagramas)
-except:
-    print("Não foi possivel verificar a proxima")
+    if len(letras2) == 0:
+        print("As palavras são anagramas!")
