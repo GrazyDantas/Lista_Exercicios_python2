@@ -6,7 +6,7 @@ letras1 = list(palavra1)
 letras2 = list(palavra2)
 
 if len(letras1) != len(letras2):
-    print("As palavras não são anagramas, pois têm tamanhos diferentes.")
+    print(palavra1,"e",palavra2,"não são anagramas, pois têm tamanhos diferentes")
 else:
     i = 0
     while i < len(letras1):
@@ -14,8 +14,8 @@ else:
         try:
             letras2.remove(letra)
         except:
-            print("As palavras não são anagramas, pois têm letras diferentes")
+            print(palavra1,"e",palavra2,"não são anagramas, pois têm letras diferentes")
         i += 1
 
     if len(letras2) == 0:
-        print("As palavras são anagramas!")
+        print(palavra1,"e",palavra2,"são anagramas!")
